@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "version": "0.1",
+  "name": "Tabnabbing",
+  "description": "Tabnabbing",
+  "permissions": ["<all_urls>","activeTab","tabs", "tabCapture","*://*/*"],
+  "background": {
+  	"scripts": ["resemble.js","try.js","logic.js"],
+  	"persistent": true,
+  },
+  "page_action": {
+  	"default_icon": "image/green-okay.png",
+  	"default_popup": "first.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["try.js","resemble.js"]
+    }
+  ]
+}
